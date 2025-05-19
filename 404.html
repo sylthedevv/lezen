@@ -1,0 +1,53 @@
+<h1>error :[</h1>
+<p style="font-weight: bold;">this could be for a multiple amount of reasons:</p>
+<br>
+<p>1. the search query or url you entered is invalid</p>
+<p>2. your wifi is extremely shit (im sorry 🥀)</p>
+<p>3. this is your first time searching</p>
+<p>etc</p>
+<br>
+<p style="font-weight: bold;">how to fix this?</p>
+<br>
+<p>1. hard refresh the page</p>
+<p>or click the button below to fix the proxy!</p>
+<br>
+<button id="uv-register-sw" value="Register service worker" onclick="refresh()">Register ServiceWorker</button>
+<script src="index.js"></script>
+  <script src="/s/edu.js"></script>
+  <script src="/s/math.js"></script>
+  <script src="register-sw.js"></script>
+<script>
+function refresh() {
+  window.location.href = window.location.href;
+}
+</script>
+<style>
+ @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital@0;1&display=swap');
+
+html {
+    background-color: #1e1e2e;
+    color: white;
+    font-family: "JetBrains Mono";
+    text-align: center;
+    margin-top: 140px;
+}
+
+#uv-address {
+  width: 500px;
+    background-color: white;
+    border: 1.5px #FFFFFF solid;
+    border-radius: 10px;
+    font-size: 14px;
+    padding: 12px;
+    text-align: center;
+    color: black;
+    outline: none;
+    font-family: "JetBrains Mono";
+    transition: color;
+    transition-duration: 100ms;
+}
+
+p {
+  font-size: 20px;
+}   
+</style>

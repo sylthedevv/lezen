@@ -18,6 +18,7 @@ html {
     text-align: center;
     color: black;
     outline: none;
+    font-family: "JetBrains Mono";
     transition: color;
     transition-duration: 100ms;
 }
