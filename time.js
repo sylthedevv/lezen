@@ -1,0 +1,1 @@
+// script for the time, ex 12:00:00, not military time

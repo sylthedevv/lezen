@@ -1,25 +1,36 @@
-import { ChemicalServer } from "chemicaljs";
-import express from "express";
+"use strict";
+/**
+ * @type {HTMLFormElement}
+ */
+const form = document.getElementById("uv-form");
+/**
+ * @type {HTMLInputElement}
+ */
+const address = document.getElementById("uv-address");
+/**
+ * @type {HTMLInputElement}
+ */
+const searchEngine = document.getElementById("uv-search-engine");
+/**
+ * @type {HTMLParagraphElement}
+ */
+const error = document.getElementById("uv-error");
+/**
+ * @type {HTMLPreElement}
+ */
+const errorCode = document.getElementById("uv-error-code");
 
-const chemical = new ChemicalServer({
-  scramjet: false,
-  rammerhead: false,
-});
+form.addEventListener("submit", async (event) => {
+  event.preventDefault();
 
-const port = process.env.PORT || 8080;
+  try {
+    await registerSW();
+  } catch (err) {
+    error.textContent = "Failed to register service worker.";
+    errorCode.textContent = err.toString();
+    throw err;
+  }
 
-chemical.app.use(
-  express.static("public", {
-    index: "index.html",
-    extensions: ["html"],
-  })
-);
-
-chemical.app.use((req, res) => {
-  res.status(404);
-  res.sendFile("public/404.html", { root: "." });
-});
-
-chemical.server.listen(port, () => {
-  console.log(`lezen listening on port ${port}`);
+  const url = search(address.value, searchEngine.value);
+  location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
 });
