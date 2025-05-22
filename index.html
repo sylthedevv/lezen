@@ -20,5 +20,18 @@
   <input id="uv-search-engine" value="https://duckduckgo.com/?q=%s" type="hidden" />
   <input id="uv-address" type="text" placeholder="Input a URL or search query" />
 </form>
+<div class="desc left-margin">
+            <p id="uv-error"></p>
+            <pre id="uv-error-code"></pre>
+        </div>
+<script>
+    async function regsw(){
+        await navigator.serviceWorker.register("/static/uv-sw.js", {
+            scope: "/static/",
+        });
+    }
+
+    regsw();
+    </script>
 </body>
 </html>
