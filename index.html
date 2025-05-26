@@ -11,7 +11,6 @@
     <script src="/static/register-sw.js" defer></script>
     <script src="/static/search.js" defer></script>
     <script src="/static/index.js" defer></script>
-    <script src="/static/check.js" defer=""></script>
     <script type='text/javascript' src='//prestigiousarmed.com/ec/07/ed/ec07ed4374ec9e5b485705e93ba54668.js'></script>
 </head>
 <body>
@@ -25,14 +24,5 @@
             <p id="uv-error"></p>
             <pre id="uv-error-code"></pre>
         </div>
-<script>
-    async function regsw(){
-        await navigator.serviceWorker.register("/static/uv-sw.js", {
-            scope: "/static/",
-        });
-    }
-
-    regsw();
-    </script>
 </body>
 </html>
